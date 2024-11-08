@@ -51,7 +51,7 @@ class BundleBearAPI:
                     print(f"    Error: {result['error']}")
                 else:
                     print(f"    Status: {result['status']}")
-                    print(f"    Data: {result['data']}")
+                    # print(f"    Data: {result['data']}")
 
 def main():
     # Initialize the API client
