@@ -5,14 +5,13 @@ import time
 class BundleBearAPI:
     def __init__(self, base_url: str):
         self.base_url = base_url.rstrip('/')
-        self.chains = ['all', 'ethereum', 'optimism', 'arbitrum', 'base', 'polygon', 'avalanche', 'bsc']
+        self.chains = ['all', 'ethereum', 'optimism', 'arbitrum', 'base', 'polygon', 'bsc', 'worldchain', 'linea', 'celo', 'gnosis']
         self.endpoints = [
             '/overview',
             '/bundler',
             '/paymaster',
             '/account_deployer',
-            '/apps',
-            '/wallet'
+            '/apps'
         ]
 
     def make_request(self, endpoint: str, chain: str, timeframe: str = 'week') -> Dict:
