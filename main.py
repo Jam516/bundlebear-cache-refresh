@@ -5,7 +5,7 @@ import time
 class BundleBearAPI:
     def __init__(self, base_url: str):
         self.base_url = base_url.rstrip('/')
-        self.chains = ['all', 'ethereum', 'optimism', 'arbitrum', 'base', 'polygon', 'bsc', 'worldchain', 'linea', 'celo', 'gnosis']
+        self.chains = ['all', 'ethereum', 'optimism', 'arbitrum', 'base', 'polygon', 'bsc', 'worldchain', 'linea', 'celo', 'gnosis', 'arbitrum_nova', 'avalanche']
         self.endpoints = [
             '/overview',
             '/bundler',
