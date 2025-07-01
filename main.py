@@ -13,6 +13,11 @@ class BundleBearAPI:
             '/account_deployer',
             '/apps'
         ]
+        self.chains_7702 = ['all', 'ethereum', 'optimism', 'arbitrum', 'base', 'bsc', 'gnosis', 'unichain']
+        self.endpoints_7702 = [
+            '/eip7702-overview',
+            '/eip7702-authorized-contracts'
+        ]
 
     def make_request(self, endpoint: str, chain: str, timeframe: str = 'week') -> Dict:
         """Make a request to a specific endpoint for a given chain."""
@@ -51,6 +56,21 @@ class BundleBearAPI:
                 else:
                     print(f"    Status: {result['status']}")
                     # print(f"    Data: {result['data']}")
+
+        for chain in self.chains_7702:
+            print(f"\nFetching data for chain: {chain}")
+            for endpoint in self.endpoints_7702:
+                print(f"  Calling endpoint: {endpoint}")
+                result = self.make_request(endpoint, chain)
+                
+                # Add a small delay to avoid overwhelming the API
+                time.sleep(0.5)
+                
+                # Print status and data
+                if result.get('error'):
+                    print(f"    Error: {result['error']}")
+                else:
+                    print(f"    Status: {result['status']}")
 
 def main():
     # Initialize the API client
