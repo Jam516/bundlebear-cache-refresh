@@ -16,7 +16,8 @@ class BundleBearAPI:
         self.chains_7702 = ['all', 'ethereum', 'optimism', 'arbitrum', 'base', 'bsc', 'gnosis', 'unichain']
         self.endpoints_7702 = [
             '/eip7702-overview',
-            '/eip7702-authorized-contracts'
+            '/eip7702-authorized-contracts',
+            '/eip7702-apps'
         ]
 
     def make_request(self, endpoint: str, chain: str, timeframe: str = 'week') -> Dict:
